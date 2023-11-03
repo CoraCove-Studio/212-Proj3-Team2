@@ -3494,6 +3494,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 196199701495122384, guid: d24f98122e78e0e4ebe00361639e7928,
+        type: 3}
+      propertyPath: amountToPoolElementals
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3164725326753255740, guid: d24f98122e78e0e4ebe00361639e7928,
         type: 3}
       propertyPath: m_LocalPosition.x

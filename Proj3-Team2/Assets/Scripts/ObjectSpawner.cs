@@ -8,10 +8,12 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private List<GameObject> elementalSpawnLocations;
     [SerializeField] private List<GameObject> coreSpawnLocations;
     public int coreCount; //public so gameplay can access it
+    private int location;
     // Start is called before the first frame update
     void Start()
     {
         coreCount = 0;
+        location = 0;
         InvokeRepeating("SpawnWaterOrFireElemental", 0.0f, 2.0f); //these values can change
         InvokeRepeating("SpawnWaterOrFireCore", 5.0f, 5.0f);  //only spawns 5 cores, will need a rework so cores dont spawn in same spot when spawning more than 5 locations
 
@@ -47,7 +49,6 @@ public class ObjectSpawner : MonoBehaviour
     {
         print("spawned core");
         int coreSwap = Random.Range(1, 3); //RR int is not maximally inclusive so range must be 1-3
-        int location = 0;
         if(coreSwap == 1) //fire cores
         {
             GameObject fireCore = ObjectPooler.sharedInstance.GetPooledFireCores();

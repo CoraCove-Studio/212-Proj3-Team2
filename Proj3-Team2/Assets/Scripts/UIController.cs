@@ -16,14 +16,14 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //UpdateSlider(_gameplay.scaleValue, _gameplay.elementalState);
+        UpdateSlider(_gameplay.scaleValue, _gameplay.elementalState);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        //UpdateSlider(_gameplay.scaleValue, _gameplay.elementalState);
-        print(_gameplay.elementalState);
+        UpdateSlider(_gameplay.scaleValue, _gameplay.elementalState);
+        //print(_gameplay.elementalState);
     }
 
     void UpdateSlider(float amount, string state)
