@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody rb;
-    [SerializeField] private float playerSpeed; //public so gameplay script can access
+    [Header("ASSIGNED IN INSPECTOR")]
+    [SerializeField] private float playerSpeed;
+
+    [Header("INPUT VALUES")]
     [SerializeField] private float horizontalInput;
     [SerializeField] private float verticalInput;
 
@@ -18,12 +21,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
 
     private void FixedUpdate()
     {

@@ -5,16 +5,21 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler sharedInstance;
-    [SerializeField] private List<GameObject> pooledFireElementals;
-    [SerializeField] private List<GameObject> pooledWaterElementals;
-    [SerializeField] private List<GameObject> pooledFireCores;
-    [SerializeField] private List<GameObject> pooledWaterCores;
+    [Header("ASSIGNED IN INSPECTOR")]
     [SerializeField] private GameObject fireElemental;
     [SerializeField] private GameObject waterElemental;
     [SerializeField] private GameObject fireCore;
     [SerializeField] private GameObject waterCore;
     [SerializeField] private int amountToPoolElementals;
     [SerializeField] private int amountToPoolCores;
+
+    [Header("POOLED ENEMIES")]
+    [SerializeField] private List<GameObject> pooledFireElementals;
+    [SerializeField] private List<GameObject> pooledWaterElementals;
+    [SerializeField] private List<GameObject> pooledFireCores;
+    [SerializeField] private List<GameObject> pooledWaterCores;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,19 +38,19 @@ public class ObjectPooler : MonoBehaviour
         {
             GameObject fireCo = Instantiate(fireCore);
             fireCo.SetActive(false);
-            pooledFireElementals.Add(fireCo);
+            pooledFireCores.Add(fireCo);
         }
         for (int we = 0; we < amountToPoolElementals; we++) //pools water elementals
         {
             GameObject waterEle = Instantiate(waterElemental);
             waterEle.SetActive(false);
-            pooledFireElementals.Add(waterEle);
+            pooledWaterElementals.Add(waterEle);
         }
         for (int wc = 0; wc < amountToPoolCores; wc++) //pools water cores
         {
             GameObject waterCo = Instantiate(waterCore);
             waterCo.SetActive(false);
-            pooledFireElementals.Add(waterCo);
+            pooledWaterCores.Add(waterCo);
         }
     }
 
