@@ -17,6 +17,8 @@ TagManager:
   - pipe
   - pressurePlate
   - rock
+  - sceneTransition
+  - flammable
   layers:
   - Default
   - TransparentFX

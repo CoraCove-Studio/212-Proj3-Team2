@@ -5,6 +5,7 @@ using UnityEngine;
 public class TagManager : MonoBehaviour
 {
     //all assigned in inspector
+    public string player;
     public string fireCore;
     public string waterCore;
     public string earthCore;
@@ -15,4 +16,6 @@ public class TagManager : MonoBehaviour
     public string flammable;
     public string pressurePlate;
     public string rock;
+
+    public string sceneTransition;
 }
