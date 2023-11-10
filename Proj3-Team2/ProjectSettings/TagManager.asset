@@ -11,6 +11,12 @@ TagManager:
   - wall
   - wallZ
   - wallX
+  - earthCore
+  - airCore
+  - grate
+  - pipe
+  - pressurePlate
+  - rock
   layers:
   - Default
   - TransparentFX

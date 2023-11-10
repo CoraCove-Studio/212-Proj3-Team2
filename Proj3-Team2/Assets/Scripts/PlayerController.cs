@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("INPUT VALUES")]
     [SerializeField] private float horizontalInput;
-    [SerializeField] private float verticalInput;
 
 
     // Start is called before the first frame update
@@ -31,11 +30,10 @@ public class PlayerController : MonoBehaviour
     private void GetPlayerInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
     }
 
     private void MovePlayer()
     {
-        rb.velocity = new Vector3(horizontalInput * playerSpeed, 0, verticalInput * playerSpeed);
+        rb.velocity = new Vector3(horizontalInput * playerSpeed, 0, 0);
     }
 }
