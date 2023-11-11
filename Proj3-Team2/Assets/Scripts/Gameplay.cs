@@ -8,7 +8,7 @@ public class Gameplay : MonoBehaviour
 {
     [Header("ASSIGNED VIA GAMEPLAY")]
     [SerializeField] private string sceneName;
-    [SerializeField] private bool hasRock;
+    [SerializeField] public bool hasRock;
     [SerializeField] public bool placedRock;
     [SerializeField] private bool doorBurnedDown;
     [SerializeField] private GameObject child;
@@ -133,6 +133,7 @@ public class Gameplay : MonoBehaviour
                 child.GetComponent<RockBehavior>().depositedOnPlate = true;
                 child.transform.SetParent(null);
                 placedRock = true;
+                hasRock = false;
                 print("placed rock");
             }
             else                                                //no rock = you shall not pass
@@ -191,16 +192,16 @@ public class Gameplay : MonoBehaviour
         else if (other.CompareTag(_tagManager.sceneTransition))
         {
             //scene transition stuff here
-            if(sceneName == "levelOne")
+            if(sceneName == "levelOne" && elementalState == "water")
             {
                 StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "levelTwo"));
             }
-            else if (sceneName == "levelTwo")
+            else if (sceneName == "levelTwo" && elementalState == "fire")
             {
                 //door burning anim here, with delay
                 StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "mainMenu"));
             }
-            else if (sceneName == "levelThree")
+            else if (sceneName == "levelThree" && elementalState == "air")
             {
                 //level three to win? or four
             }
@@ -220,6 +221,10 @@ public class Gameplay : MonoBehaviour
                 return;
             }
         }
+        //else if (other.CompareTag(_tagManager.pressurePlate) && placedRock)
+        //{
+        //    placedRock = false; 
+        //}
     }
     #endregion
 

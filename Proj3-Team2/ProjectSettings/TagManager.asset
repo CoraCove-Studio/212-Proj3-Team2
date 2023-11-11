@@ -19,6 +19,7 @@ TagManager:
   - rock
   - sceneTransition
   - flammable
+  - weightedPlate
   layers:
   - Default
   - TransparentFX
