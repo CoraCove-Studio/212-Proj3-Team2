@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class PressurePlateBehavior : MonoBehaviour
@@ -9,7 +8,9 @@ public class PressurePlateBehavior : MonoBehaviour
     [SerializeField] private bool depressed;            //is pressure plate activated or not
 
     [Header("ASSIGNED IN INSPECTOR")]
-    [SerializeField] private GameObject itemToDestroy;
+    //[SerializeField] private GameObject itemToDestroy;
+    [SerializeField] private Collider dungeonShelf;
+
     [SerializeField] private Collider elementalCol;
 
     [Header("SCRIPTS - ASSIGNED IN INSPECTOR")]
@@ -27,7 +28,12 @@ public class PressurePlateBehavior : MonoBehaviour
             this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y-0.053f, this.gameObject.transform.position.z);
             depressed = true;
             //play audio click here
-            itemToDestroy.SetActive(false);
+
+            //inserted code
+            dungeonShelf.attachedRigidbody.useGravity = true;
+            dungeonShelf.attachedRigidbody.isKinematic = false;
+
+            //itemToDestroy.SetActive(false);
             elementalCol.attachedRigidbody.useGravity = true;
         }
     }
