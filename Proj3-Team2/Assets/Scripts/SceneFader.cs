@@ -10,6 +10,8 @@ public class SceneFader : MonoBehaviour
     public Image fadeOutUIImage;
     public float fadeSpeed = 0.8f;
 
+    [SerializeField] public string sceneName;
+
     public enum FadeDirection
     {
         In, //Alpha = 1
