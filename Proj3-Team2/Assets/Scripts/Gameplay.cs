@@ -128,13 +128,17 @@ public class Gameplay : MonoBehaviour
         {
             if (hasRock)                                        //can only have rock when earth aligned                          
             {
-                //trigger pressure plate
-                child.GetComponent<RockBehavior>().attachedToPlayer = false;
-                child.GetComponent<RockBehavior>().depositedOnPlate = true;
-                child.transform.SetParent(null);
-                placedRock = true;
-                hasRock = false;
-                print("placed rock");
+                if (!child.GetComponent<RockBehavior>().depositedOnPlate) //if rock hasn't been placed yet
+                {
+                    //trigger pressure plate
+                    child.GetComponent<RockBehavior>().attachedToPlayer = false;
+                    child.GetComponent<RockBehavior>().depositedOnPlate = true;
+                    child.GetComponent<RockBehavior>().canPickUp= false;
+                    child.transform.SetParent(null);
+                    placedRock = true;
+                    hasRock = false;
+                    print("placed rock");
+                }
             }
             else                                                //no rock = you shall not pass
             {
@@ -154,8 +158,11 @@ public class Gameplay : MonoBehaviour
         }      
         else if (other.CompareTag(_tagManager.rock))
         {
-            if (!hasRock && elementalState == "earth")          //player can only have one 
+            GameObject rock = other.gameObject;
+            //bool hasPlaced = false;
+            if (!hasRock && elementalState == "earth" && rock.GetComponent<RockBehavior>().canPickUp)          //player can only have one 
             {
+                //hasPlaced = rock.GetComponent<RockBehavior>().depositedOnPlate;
                 hasRock = true;
                 other.transform.SetParent(this.gameObject.transform, false);
                 child = other.gameObject;

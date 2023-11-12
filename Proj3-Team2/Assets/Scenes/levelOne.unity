@@ -4204,6 +4204,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1503158855974419505, guid: 4c0a5b748e4fe364080093376b966369,
+        type: 3}
+      propertyPath: weightedPlate
+      value: weightedPlate
+      objectReference: {fileID: 0}
     - target: {fileID: 2703519598715995983, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: m_Name

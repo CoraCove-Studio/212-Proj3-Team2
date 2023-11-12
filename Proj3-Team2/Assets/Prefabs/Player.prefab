@@ -165,7 +165,7 @@ MonoBehaviour:
   flammable: flammable
   pressurePlate: pressurePlate
   rock: rock
-  weightedPlate: 
+  weightedPlate: weightedPlate
   sceneTransition: sceneTransition
 --- !u!114 &4204538136092293689
 MonoBehaviour:

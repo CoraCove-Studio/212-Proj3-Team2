@@ -40,7 +40,7 @@ public class PressurePlateBehavior : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag(_tagManager.player) && _gamePlay.placedRock)
+        if(other.CompareTag(_tagManager.player) && !_gamePlay.hasRock)
         {
             return;
         }

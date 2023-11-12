@@ -6,20 +6,25 @@ public class RockBehavior : MonoBehaviour
 {
     [SerializeField] public bool attachedToPlayer;
     [SerializeField] public bool depositedOnPlate;
+    [SerializeField] public bool canPickUp;
     [SerializeField] private GameObject playerRockLocation;
     [SerializeField] private GameObject pressurePlate;
 
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        canPickUp = true;
+    }
     void FixedUpdate()
     {
-        if (attachedToPlayer)
+        if (attachedToPlayer & canPickUp)
         {
             gameObject.transform.position= playerRockLocation.transform.position;
         }
         else if(depositedOnPlate)
         {
             gameObject.transform.position = pressurePlate.transform.position;
+            canPickUp= false;
         }
     }
 }
