@@ -10,6 +10,8 @@ public class WeightedPlateBehavior : MonoBehaviour
     //[SerializeField] private Collider dungeonShelf;
     [SerializeField] private Collider elementalCol;
     [SerializeField] private Rigidbody elementalRb;
+    [SerializeField] private Transform elementalTransToPlayer; //location to spawn the location of the elemental core
+    [SerializeField] private Animation vfxEffect; 
 
     [Header("SCRIPTS - ASSIGNED IN INSPECTOR")]
     [SerializeField] private Gameplay _gamePlay;
@@ -29,7 +31,7 @@ public class WeightedPlateBehavior : MonoBehaviour
             //play audio click here
 
             //inserted code
-            elementalRb.AddForce(0, 0, 50.0f);
+            //elementalRb.AddForce(0, 0, 50.0f);
             //trigger animation effect?
             //elementalCol.attachedRigidbody.useGravity = true;
         }
