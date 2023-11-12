@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91503722313a6c447a248b709319c507
+guid: 5cf8161d6a80082419d9f54cb33901a7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -95,12 +95,12 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.39999998
-    rootMotionBoneName: 
+    globalScale: 40
+    rootMotionBoneName: Slime
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 327f01b81edbcec4eb185b131069d64f,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 2044e4d12ba4572469093ce9a58e0079,
     type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2

@@ -4224,6 +4224,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6983863295669536086, guid: 4c0a5b748e4fe364080093376b966369,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7426576068417822515, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: m_AngularDrag
