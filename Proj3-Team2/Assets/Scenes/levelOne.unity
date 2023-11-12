@@ -3260,6 +3260,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 174163508}
+    - target: {fileID: 1507110077134066396, guid: 75717cc08438eb44ea65a8837265ceac,
+        type: 3}
+      propertyPath: playerRockLocation
+      value: 
+      objectReference: {fileID: 2043911631}
     - target: {fileID: 2711376483355028238, guid: 75717cc08438eb44ea65a8837265ceac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3420,6 +3425,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 174163508}
+    - target: {fileID: 7417303655684920066, guid: 75717cc08438eb44ea65a8837265ceac,
+        type: 3}
+      propertyPath: playerRockLocation
+      value: 
+      objectReference: {fileID: 2043911631}
     - target: {fileID: 8483710590289713124, guid: 75717cc08438eb44ea65a8837265ceac,
         type: 3}
       propertyPath: m_Size.x
@@ -3725,6 +3735,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2043911631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3524528799185530497, guid: 4c0a5b748e4fe364080093376b966369,
+    type: 3}
+  m_PrefabInstance: {fileID: 5313320044069024959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2054339882
 GameObject:
   m_ObjectHideFlags: 0

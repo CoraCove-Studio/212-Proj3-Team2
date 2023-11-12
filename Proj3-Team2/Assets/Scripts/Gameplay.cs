@@ -199,6 +199,7 @@ public class Gameplay : MonoBehaviour
             else if (sceneName == "levelTwo" && elementalState == "fire")
             {
                 //door burning anim here, with delay
+                //currently set to mainMenu but will change to levelThree
                 StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "mainMenu"));
             }
             else if (sceneName == "levelThree" && elementalState == "air")

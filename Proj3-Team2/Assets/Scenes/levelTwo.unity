@@ -949,6 +949,12 @@ PrefabInstance:
       addedObject: {fileID: 330585546}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c0a5b748e4fe364080093376b966369, type: 3}
+--- !u!1 &1674598783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3524528799185530497, guid: 4c0a5b748e4fe364080093376b966369,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674598782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1676319288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1147,6 +1153,11 @@ PrefabInstance:
       propertyPath: pressurePlate
       value: 
       objectReference: {fileID: 124462979}
+    - target: {fileID: 5478359708916071955, guid: e14a3276e418a984b87d66802fb1b23b,
+        type: 3}
+      propertyPath: playerRockLocation
+      value: 
+      objectReference: {fileID: 1674598783}
     - target: {fileID: 5712896792235994944, guid: e14a3276e418a984b87d66802fb1b23b,
         type: 3}
       propertyPath: _gamePlay
@@ -1252,6 +1263,11 @@ PrefabInstance:
       propertyPath: pressurePlate
       value: 
       objectReference: {fileID: 70212949}
+    - target: {fileID: 9051768626814415065, guid: e14a3276e418a984b87d66802fb1b23b,
+        type: 3}
+      propertyPath: playerRockLocation
+      value: 
+      objectReference: {fileID: 1674598783}
     - target: {fileID: 9063693269585166042, guid: e14a3276e418a984b87d66802fb1b23b,
         type: 3}
       propertyPath: m_TagString
