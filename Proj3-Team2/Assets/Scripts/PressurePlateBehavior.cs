@@ -21,23 +21,36 @@ public class PressurePlateBehavior : MonoBehaviour
     {
         depressed = false;
     }
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag(_tagManager.player) && !depressed && _gamePlay.placedRock) //player on top doesn't do anything other than lower plate, must place rock
+    //    {                                                                               
+    //        this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y-0.053f, this.gameObject.transform.position.z);
+    //        depressed = true;
+    //        //play audio click here
+
+    //        //inserted code
+    //        dungeonShelf.attachedRigidbody.useGravity = true;
+    //        dungeonShelf.attachedRigidbody.isKinematic = false;
+
+    //        //itemToDestroy.SetActive(false);
+    //        elementalCol.attachedRigidbody.useGravity = true;
+    //    }
+    //}
+
+    public void PressurePlateTriggered()
     {
-        if (other.CompareTag(_tagManager.player) && !depressed && _gamePlay.placedRock) //player on top doesn't do anything other than lower plate, must place rock
-        {                                                                               
-            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y-0.053f, this.gameObject.transform.position.z);
-            depressed = true;
-            //play audio click here
+        this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 0.053f, this.gameObject.transform.position.z);
+        depressed = true;
+        //play audio click here
 
-            //inserted code
-            dungeonShelf.attachedRigidbody.useGravity = true;
-            dungeonShelf.attachedRigidbody.isKinematic = false;
+        //inserted code
+        dungeonShelf.attachedRigidbody.useGravity = true;
+        dungeonShelf.attachedRigidbody.isKinematic = false;
 
-            //itemToDestroy.SetActive(false);
-            elementalCol.attachedRigidbody.useGravity = true;
-        }
+        //itemToDestroy.SetActive(false);
+        elementalCol.attachedRigidbody.useGravity = true;
     }
-
     private void OnTriggerExit(Collider other)
     {
         if(other.CompareTag(_tagManager.player) && !_gamePlay.hasRock)

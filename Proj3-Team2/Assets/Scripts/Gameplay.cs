@@ -128,8 +128,10 @@ public class Gameplay : MonoBehaviour
         {
             if (hasRock)                                        //can only have rock when earth aligned                          
             {
+                print("break 1");
                 if (!child.GetComponent<RockBehavior>().depositedOnPlate) //if rock hasn't been placed yet
                 {
+                    print("break 2");
                     //trigger pressure plate
                     child.GetComponent<RockBehavior>().attachedToPlayer = false;
                     child.GetComponent<RockBehavior>().depositedOnPlate = true;
@@ -138,6 +140,7 @@ public class Gameplay : MonoBehaviour
                     placedRock = true;
                     hasRock = false;
                     print("placed rock");
+                    other.GetComponent<PressurePlateBehavior>().PressurePlateTriggered();
                 }
             }
             else                                                //no rock = you shall not pass
