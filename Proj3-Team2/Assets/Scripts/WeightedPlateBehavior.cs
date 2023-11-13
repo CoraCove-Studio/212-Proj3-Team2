@@ -8,11 +8,10 @@ public class WeightedPlateBehavior : MonoBehaviour
 
     [Header("ASSIGNED IN INSPECTOR")]
     //[SerializeField] private Collider dungeonShelf;
-    [SerializeField] private GameObject elementalCoreToTeleport;
     [SerializeField] private Collider elementalCol;
     [SerializeField] private Rigidbody elementalRb;
     [SerializeField] private Transform elementalTransToPlayer; //location to spawn the location of the elemental core
-    [SerializeField] private GameObject vfxSmoke; 
+    [SerializeField] private Animation vfxEffect; 
 
     [Header("SCRIPTS - ASSIGNED IN INSPECTOR")]
     [SerializeField] private Gameplay _gamePlay;
@@ -23,24 +22,19 @@ public class WeightedPlateBehavior : MonoBehaviour
         depressed = false;
     }
     private void OnTriggerEnter(Collider other)
-    {
-        elementalCoreToTeleport.transform.position = elementalTransToPlayer.position;
-        vfxSmoke.SetActive(false);
+    {                                                               //&& _gamePlay.placedRock was causing plate to not trigger
+        if (other.CompareTag(_tagManager.player) && !depressed ) //player on top doesn't do anything other than lower plate, must place rock
+        {                                                                               //lowers weighted plate by 2.42. will improve code later to get rid of magic numbers
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 2.42f, this.gameObject.transform.position.z);
+            depressed = true;
+            print("wp triggered");
+            //play audio click here
 
-        //&& _gamePlay.placedRock was causing plate to not trigger
-        //if (other.CompareTag("Player") && !depressed ) //player on top doesn't do anything other than lower plate, must place rock
-        //{                                                                               //lowers weighted plate by 2.42. will improve code later to get rid of magic numbers
-        //    this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 2.42f, this.gameObject.transform.position.z);
-        //    depressed = true;
-        //    print("wp triggered");
-        //    //play audio click here
-        //    //inserted code
-        //    //elementalRb.AddForce(0, 0, 50.0f);
-        //    //trigger animation effect?
-        //    //elementalCol.attachedRigidbody.useGravity = true;
-
-        //    elementalCoreToTeleport.transform.position = elementalTransToPlayer.position;
-        //}
+            //inserted code
+            //elementalRb.AddForce(0, 0, 50.0f);
+            //trigger animation effect?
+            //elementalCol.attachedRigidbody.useGravity = true;
+        }
     }
 
     //private void OnTriggerExit(Collider other)
