@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7200927917085466067}
   - component: {fileID: 4654564151382208828}
   - component: {fileID: 1684841467009225014}
+  - component: {fileID: 33539549875972547}
   m_Layer: 0
   m_Name: Potion_Red
   m_TagString: fireCore
@@ -157,3 +158,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12689707, y: 0.24418375, z: 1.8661907}
   m_Center: {x: 0, y: 0.12209191, z: -0.8598312}
+--- !u!95 &33539549875972547
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200927917085466066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54d847f9d0688b346b385dc9637e180f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
