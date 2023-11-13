@@ -7,6 +7,8 @@ public class PipePhaseBehavior : MonoBehaviour
     [Header("Assigned In Inspector")]
     [SerializeField] private GameObject player;
     [SerializeField] private Transform pipeTravelPoint;
+    [SerializeField] private AudioClip pipeSFX;
+    [SerializeField] private AudioSource audioSource;
 
     //private variables
     private string water = "water";
@@ -31,6 +33,9 @@ public class PipePhaseBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag(_tagManager.player) && element == water)
         {
+            audioSource.volume = 0.5f;
+            audioSource.clip = pipeSFX;
+            audioSource.Play();
             player.transform.position = pipeTravelPoint.position;
         }
     }

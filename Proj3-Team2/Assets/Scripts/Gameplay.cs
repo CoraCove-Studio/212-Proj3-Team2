@@ -148,6 +148,31 @@ public class Gameplay : MonoBehaviour
                 return;
             }
         }
+        //inserted for weighted plate fix
+        else if (other.CompareTag(_tagManager.weightedPlate))   //weighted plate behavior
+        {
+            if (hasRock)                                        //can only have rock when earth aligned                          
+            {
+                print("break 1");
+                if (!child.GetComponent<RockBehavior>().depositedOnPlate) //if rock hasn't been placed yet
+                {
+                    print("break 2");
+                    //trigger pressure plate
+                    child.GetComponent<RockBehavior>().attachedToPlayer = false;
+                    child.GetComponent<RockBehavior>().depositedOnPlate = true;
+                    child.GetComponent<RockBehavior>().canPickUp = false;
+                    child.transform.SetParent(null);
+                    placedRock = true;
+                    hasRock = false;
+                    print("placed rock");
+                    //other.GetComponent<PressurePlateBehavior>().PressurePlateTriggered();
+                }
+            }
+            else                                                //no rock = you shall not pass
+            {
+                return;
+            }
+        }
         else if (other.CompareTag(_tagManager.grate))           //determines if you can pass through the grate
         {
             if(elementalState == "water")
