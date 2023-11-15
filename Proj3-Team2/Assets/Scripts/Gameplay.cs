@@ -15,10 +15,8 @@ public class Gameplay : MonoBehaviour
     [SerializeField] private GameObject interactable;
 
     [Header("ASSIGNED IN INSPECTOR")]
-    [SerializeField] private GameObject fireState;
-    [SerializeField] private GameObject waterState;
-    [SerializeField] private GameObject earthState;
-    [SerializeField] private GameObject airState;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Material[] elementalMaterials = new Material[4];  // earth is [0] water is [1] fire is [2] air is [3]
     [SerializeField] public string elementalState;                  //public so other scripts have access
     [SerializeField] private GameObject pipeLandingSpot;
     //[SerializeField] private GameObject gameWonPanel;               //temp
@@ -31,47 +29,37 @@ public class Gameplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = this.gameObject;
         //gameWonPanel.SetActive(false);
         sceneName = SceneManager.GetActiveScene().name;
         placedRock= false;
         doorBurnedDown= false;
+        SetInitialElementalState();
     }
 
-    //private void SetInitialElementalState()
-    //{
-    //    if(sceneName == "levelOne")
-    //    {
-    //        elementalState = "earth";
-    //        earthState.SetActive(true);
-    //        airState.SetActive(false);
-    //        fireState.SetActive(false);
-    //        waterState.SetActive(false);
-    //    }
-    //    else if (sceneName == "levelTwo")
-    //    {
-    //        elementalState = "water";
-    //        earthState.SetActive(false);
-    //        airState.SetActive(false);
-    //        fireState.SetActive(false);
-    //        waterState.SetActive(true);
-    //    }
-    //    else if (sceneName == "levelThree")
-    //    {
-    //        elementalState = "fire";
-    //        earthState.SetActive(false);
-    //        airState.SetActive(false);
-    //        fireState.SetActive(true);
-    //        waterState.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        elementalState = "earth";                           //default if something goes wrong, sets state to earth
-    //        earthState.SetActive(true);
-    //        airState.SetActive(false);
-    //        fireState.SetActive(false);
-    //        waterState.SetActive(false);
-    //    }
-    //}
+    private void SetInitialElementalState()
+    {
+        if (sceneName == "levelOne")
+        {
+            elementalState = "earth";
+            player.GetComponent<Renderer>().material = elementalMaterials[0];
+        }
+        else if (sceneName == "levelTwo")
+        {
+            elementalState = "water";
+            player.GetComponent<Renderer>().material = elementalMaterials[1];
+        }
+        else if (sceneName == "levelThree")
+        {
+            elementalState = "fire";
+            player.GetComponent<Renderer>().material = elementalMaterials[2];
+        }
+        else
+        {
+            elementalState = "earth";                           //default if something goes wrong, sets state to earth
+            player.GetComponent<Renderer>().material = elementalMaterials[0];
+        }
+    }
 
     #region Collisions
     private void OnTriggerEnter(Collider other)
@@ -152,7 +140,7 @@ public class Gameplay : MonoBehaviour
         {
             if(elementalState == "water")
             {
-                waterState.GetComponent<BoxCollider>().enabled = false;          //if water, you can pass thru the gate
+                //waterState.GetComponent<BoxCollider>().enabled = false;          //if water, you can pass thru the gate
             }
             else
             {
@@ -225,7 +213,7 @@ public class Gameplay : MonoBehaviour
         {
             if (elementalState == "water")
             {
-                waterState.GetComponent<BoxCollider>().enabled = true;          //if water, you can pass thru the gate
+                //waterState.GetComponent<BoxCollider>().enabled = true;          //if water, you can pass thru the gate
             }
             else
             {
@@ -245,31 +233,19 @@ public class Gameplay : MonoBehaviour
         elementalState = element;
         if (element == "fire")
         {
-            earthState.SetActive(false);
-            airState.SetActive(false);
-            fireState.SetActive(true);
-            waterState.SetActive(false);
+            player.GetComponent<Renderer>().material = elementalMaterials[2];
         }
         else if (element == "water")
         {
-            earthState.SetActive(false);
-            airState.SetActive(false);
-            fireState.SetActive(false);
-            waterState.SetActive(true);
+            player.GetComponent<Renderer>().material = elementalMaterials[1];
         }
         else if (element == "earth")
         {
-            earthState.SetActive(true);
-            airState.SetActive(false);
-            fireState.SetActive(false);
-            waterState.SetActive(false);
+            player.GetComponent<Renderer>().material = elementalMaterials[0];
         }
         else if (element == "air")
         {
-            earthState.SetActive(false);
-            airState.SetActive(true);
-            fireState.SetActive(false);
-            waterState.SetActive(false);
+            player.GetComponent<Renderer>().material = elementalMaterials[3];
         }
     }
 
