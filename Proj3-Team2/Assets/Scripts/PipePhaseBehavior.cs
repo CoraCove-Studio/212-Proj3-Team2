@@ -6,7 +6,7 @@ public class PipePhaseBehavior : MonoBehaviour
 {
     [Header("Assigned In Inspector")]
     [SerializeField] private GameObject player;
-    [SerializeField] private Transform pipeTravelPoint;
+    [SerializeField] public Transform pipeTravelPoint;
 
     //private variables
     private string water = "water";
@@ -27,11 +27,13 @@ public class PipePhaseBehavior : MonoBehaviour
         element = _gameplay.elementalState.ToString();
     }
 
+    /* commented out so that the gameplay script calls the trigger and not this script to insure things trigger in proper order*/
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(_tagManager.player) && element == water)
-        {
-            player.transform.position = pipeTravelPoint.position;
-        }
+        //if (other.gameObject.CompareTag(_tagManager.player) && element == water)
+        //{
+        //    player.transform.position = pipeTravelPoint.position;
+        //}
     }
 }

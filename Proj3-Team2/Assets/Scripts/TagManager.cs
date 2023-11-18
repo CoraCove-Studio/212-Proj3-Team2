@@ -22,6 +22,8 @@ public class TagManager : MonoBehaviour
     public string pressurePlate;
     public string rock;
     public string weightedPlate;
+    public string key;
+    public string coin;
 
     //misc tags
     public string sceneTransition;
