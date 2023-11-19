@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("OTHER SCRIPTS")]
     [SerializeField] private Gameplay _gameplay;
+    [SerializeField] private PlayerAnimation _anim;
 
     private string levelThree;
     private string sceneName;
@@ -101,16 +102,31 @@ public class PlayerController : MonoBehaviour
         if (player.position.y > 0)
         {
             rb.velocity = new Vector3(horizontalInput * playerSpeed, -2, 0);
+
         }
         else
         {
             rb.velocity = new Vector3(horizontalInput * playerSpeed, 0, 0);
+
         }
+
     }
 
     private void Jump()
     {
         isJumping = true;
         rb.velocity = new Vector3(0, jumpPower, 0);
+    }
+
+    private void MoveAnimation()
+    {
+        if (horizontalInput > 0 || horizontalInput < 0)
+        {
+            _anim.Walk(true);
+        }
+        else
+        {
+            _anim.Walk(false);
+        }
     }
 }

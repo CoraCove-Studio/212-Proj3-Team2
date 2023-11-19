@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    //private Animator anim;
+    private Animator anim;
 
-    //private void Awake()
-    //{
-    //    anim = GetComponent<Animator>();
-    //}
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
-    //public void Walk(bool move)
-    //{
-    //    anim.SetBool("Movement", move);
-    //}
+    public void Walk(bool move)
+    {
+        anim.SetBool("Movement", move);
+    }
 }

@@ -14239,7 +14239,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: NewScene
+          m_StringArgument: NextScene
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1674598798}
@@ -14251,8 +14251,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: NewScene
-          m_BoolArgument: 0
+          m_StringArgument: FireActive
+          m_BoolArgument: 1
         m_CallState: 2
   _gamePlay: {fileID: 1674598784}
   _tagManager: {fileID: 1674598783}
@@ -15484,6 +15484,16 @@ PrefabInstance:
       propertyPath: keysRequired
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3029857696246289908, guid: 4c0a5b748e4fe364080093376b966369,
+        type: 3}
+      propertyPath: _anim
+      value: 
+      objectReference: {fileID: 1674598807}
+    - target: {fileID: 3029857696246289908, guid: 4c0a5b748e4fe364080093376b966369,
+        type: 3}
+      propertyPath: _gameplay
+      value: 
+      objectReference: {fileID: 1674598784}
     - target: {fileID: 3757123315380252382, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: m_Enabled
@@ -15619,6 +15629,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 494623297225604522, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1674598807}
+    - targetCorrespondingSourceObject: {fileID: 494623297225604522, guid: 4c0a5b748e4fe364080093376b966369,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1674598798}
   m_SourcePrefab: {fileID: 100100000, guid: 4c0a5b748e4fe364080093376b966369, type: 3}
 --- !u!114 &1674598783 stripped
@@ -15667,7 +15681,7 @@ Animator:
   m_GameObject: {fileID: 1674598785}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f5ac123efb5f334c9ef90e71d172729, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1eae66b6379d95540aed6382c28066e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15678,6 +15692,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1674598807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674598785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bd8abdd83ee2644a2cd016353d4d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1676319288
 PrefabInstance:
   m_ObjectHideFlags: 0
