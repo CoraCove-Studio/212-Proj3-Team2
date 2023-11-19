@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2423,12 +2423,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5260092431300925993}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &456976723 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3115094577522360300, guid: 4c0a5b748e4fe364080093376b966369,
-    type: 3}
-  m_PrefabInstance: {fileID: 5313320044069024959}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &459017738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,7 +3607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 750630641}
-  pipeTravelPoint: {fileID: 985713380}
+  pipeTravelPoint:
+  - {fileID: 985713380}
 --- !u!114 &678949397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6785,7 +6780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 750630641}
-  pipeTravelPoint: {fileID: 1514622172}
+  pipeTravelPoint:
+  - {fileID: 1514622172}
 --- !u!114 &1085777210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6976,7 +6972,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 456976723}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -12731,7 +12727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424014, guid: 471a9819acca1d34c98fd8fee901ffcf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.81
+      value: -0.758
       objectReference: {fileID: 0}
     - target: {fileID: 424014, guid: 471a9819acca1d34c98fd8fee901ffcf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14727,21 +14723,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3507784082229755960, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3507784082229755960, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ff15d9cb5457f7345b1c54542d57b358, type: 2}
-    - target: {fileID: 3507784082229755960, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: ff15d9cb5457f7345b1c54542d57b358, type: 2}
     - target: {fileID: 5454692858009971209, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14785,33 +14766,18 @@ PrefabInstance:
     - target: {fileID: 5454692858009971209, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -110
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5454692858009971209, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7096573045453820993, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: key
-      value: key
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096573045453820993, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: coin
-      value: coin
-      objectReference: {fileID: 0}
     - target: {fileID: 7704275108659802889, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: fadeOutUIImage
       value: 
       objectReference: {fileID: 792221343}
-    - target: {fileID: 9004889506238615495, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

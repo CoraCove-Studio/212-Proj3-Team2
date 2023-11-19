@@ -6,7 +6,7 @@ public class PipePhaseBehavior : MonoBehaviour
 {
     [Header("Assigned In Inspector")]
     [SerializeField] private GameObject player;
-    [SerializeField] public Transform pipeTravelPoint;
+    [SerializeField] public List<Transform> pipeTravelPoint = new List<Transform>();
 
     //private variables
     private string water = "water";
@@ -15,8 +15,7 @@ public class PipePhaseBehavior : MonoBehaviour
     private TagManager _tagManager;
     private GameObject grate;
 
-    void Start()
-    {
+    void Start()    {
         grate = this.gameObject;
         _gameplay = player.GetComponent<Gameplay>();
         _tagManager = player.GetComponent<TagManager>();
@@ -31,7 +30,7 @@ public class PipePhaseBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag(_tagManager.player) && element == water)
         {
-            player.transform.position = pipeTravelPoint.position;
+            player.transform.position = pipeTravelPoint[Random.Range(0, pipeTravelPoint.Count)].position;
         }
     }
 }
