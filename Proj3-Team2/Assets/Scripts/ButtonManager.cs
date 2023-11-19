@@ -5,35 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
-
-    private void Start()
-    {
-        sceneName = SceneManager.GetActiveScene().name;
-    }
-
-    public void OnClickRestart()
-    {
-        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, sceneName));
-    }
     public void OnClickPlay()
     {
-        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "levelOne"));
+        SceneManager.LoadScene("levelOne");
     }
 
     public void OnClickHelp()
     {
-        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "help"));
+        SceneManager.LoadScene("help");
     }
 
     public void OnClickBack()
     {
-        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "mainMenu"));
+        SceneManager.LoadScene("mainMenu");
     }
 
     public void OnClickCredits()
     {
-        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "credits"));
+        SceneManager.LoadScene("credits");
     }
     public void OnClickQuit()
     {

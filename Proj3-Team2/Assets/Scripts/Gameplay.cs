@@ -12,51 +12,38 @@ public class Gameplay : MonoBehaviour
     [SerializeField] public bool placedRock;
     [SerializeField] private GameObject child;
     [SerializeField] private int coinsCollected;
-    [SerializeField] private int keysCollected;
+    [SerializeField] public int keysCollected;
     [SerializeField] private bool doorUnlocked;
     [SerializeField] private bool paused;
 
     [Header("ASSIGNED IN INSPECTOR")]
     [SerializeField] private GameObject player;
     [SerializeField] private Material[] elementalMaterials = new Material[4];  // earth is [0] water is [1] fire is [2] air is [3]
+    [SerializeField] private GameObject fireState;
+    [SerializeField] private GameObject waterState;
+    [SerializeField] private GameObject earthState;
+    [SerializeField] private GameObject airState;
     [SerializeField] public string elementalState;                  //public so other scripts have access
+    //[SerializeField] private GameObject gameWonPanel;               //temp
     [SerializeField] private int keysRequired;
     [SerializeField] private KeyCode pauseKey; //escape
-
 
     [Header("OTHER SCRIPTS")]
     [SerializeField] private TagManager _tagManager;
     [SerializeField] private UIController _uiController;
     
 
+    // Start is called before the first frame update
     void Start()
     {
+        //gameWonPanel.SetActive(false);
         player = this.gameObject;
         sceneName = SceneManager.GetActiveScene().name;
         placedRock= false;
-        doorUnlocked = false;
+        doorUnlocked = false; 
         SetInitialElementalState();
     }
 
-    private void Update()
-    {
-        if(keysCollected == keysRequired)
-        {
-            doorUnlocked = true;
-        }
-        if (!paused && Input.GetKeyDown(pauseKey))
-        {
-            paused = true;
-            Time.timeScale = 0.0f;
-            //_uiController.ActivatePauseMenu();
-        }
-        else if (paused && Input.GetKeyDown(pauseKey))
-        {
-            paused = false;
-            Time.timeScale = 1.0f;
-            //_uiController.DeactivatePauseMenu();
-        }
-    }
     private void SetInitialElementalState()
     {
         if (sceneName == "levelOne")
@@ -81,6 +68,42 @@ public class Gameplay : MonoBehaviour
         }
         //_uiController.ChangeElementalIcon(elementalState);
     }
+
+    //private void SetInitialElementalState()
+    //{
+    //    if(sceneName == "levelOne")
+    //    {
+    //        elementalState = "earth";
+    //        earthState.SetActive(true);
+    //        airState.SetActive(false);
+    //        fireState.SetActive(false);
+    //        waterState.SetActive(false);
+    //    }
+    //    else if (sceneName == "levelTwo")
+    //    {
+    //        elementalState = "water";
+    //        earthState.SetActive(false);
+    //        airState.SetActive(false);
+    //        fireState.SetActive(false);
+    //        waterState.SetActive(true);
+    //    }
+    //    else if (sceneName == "levelThree")
+    //    {
+    //        elementalState = "fire";
+    //        earthState.SetActive(false);
+    //        airState.SetActive(false);
+    //        fireState.SetActive(true);
+    //        waterState.SetActive(false);
+    //    }
+    //    else
+    //    {
+    //        elementalState = "earth";                           //default if something goes wrong, sets state to earth
+    //        earthState.SetActive(true);
+    //        airState.SetActive(false);
+    //        fireState.SetActive(false);
+    //        waterState.SetActive(false);
+    //    }
+    //}
 
     #region Collisions
     private void OnTriggerEnter(Collider other)
@@ -137,10 +160,10 @@ public class Gameplay : MonoBehaviour
         {
             if (hasRock)                                        //can only have rock when earth aligned                          
             {
-                //print("break 1");
+                print("break 1");
                 if (!child.GetComponent<RockBehavior>().depositedOnPlate) //if rock hasn't been placed yet
                 {
-                    //print("break 2");
+                    print("break 2");
                     //trigger pressure plate
                     child.GetComponent<RockBehavior>().attachedToPlayer = false;
                     child.GetComponent<RockBehavior>().depositedOnPlate = true;
@@ -158,11 +181,36 @@ public class Gameplay : MonoBehaviour
                 return;
             }
         }
+        //inserted for weighted plate fix
+        else if (other.CompareTag(_tagManager.weightedPlate))   //weighted plate behavior
+        {
+            if (hasRock)                                        //can only have rock when earth aligned                          
+            {
+                print("break 1");
+                if (!child.GetComponent<RockBehavior>().depositedOnPlate) //if rock hasn't been placed yet
+                {
+                    print("break 2");
+                    //trigger pressure plate
+                    child.GetComponent<RockBehavior>().attachedToPlayer = false;
+                    child.GetComponent<RockBehavior>().depositedOnPlate = true;
+                    child.GetComponent<RockBehavior>().canPickUp = false;
+                    child.transform.SetParent(null);
+                    placedRock = true;
+                    hasRock = false;
+                    print("placed rock");
+                    //other.GetComponent<PressurePlateBehavior>().PressurePlateTriggered();
+                }
+            }
+            else                                                //no rock = you shall not pass
+            {
+                return;
+            }
+        }
         else if (other.CompareTag(_tagManager.grate))           //determines if you can pass through the grate
         {
             if(elementalState == "water")
             {
-                //other.GetComponent<BoxCollider>().enabled = false;          //if water, you can pass thru the gate
+                waterState.GetComponent<BoxCollider>().enabled = false;          //if water, you can pass thru the gate
             }
             else
             {
@@ -179,7 +227,6 @@ public class Gameplay : MonoBehaviour
                 hasRock = true;
                 other.transform.SetParent(this.gameObject.transform, false);
                 child = other.gameObject;
-                child.transform.localScale = new Vector3(1, 1, 1);      //resets transform of rock
                 other.GetComponent<RockBehavior>().attachedToPlayer = true;
             } 
             else                                                //if hasRock do nothing
@@ -192,7 +239,6 @@ public class Gameplay : MonoBehaviour
             if(elementalState == "water")                       //must be water to pass thru the pipe
             {                                                   //here is likely where you'd play the pipe anim
                 this.gameObject.transform.position = other.GetComponent<PipePhaseBehavior>().pipeTravelPoint.transform.position;
-                print("teleported");
             }
             else                                                //if not water do nothing
             {
@@ -210,6 +256,7 @@ public class Gameplay : MonoBehaviour
                 return;
             }
         }
+
         else if (other.CompareTag(_tagManager.key))
         {
             other.gameObject.SetActive(false);
@@ -218,10 +265,12 @@ public class Gameplay : MonoBehaviour
         }
         else if (other.CompareTag(_tagManager.coin))
         {
+            Debug.Log("coin collected");
             other.gameObject.SetActive(false);
             coinsCollected++;
             //_uiController.UpdateCoinCount(coinsCollected);
         }
+
         else if (other.CompareTag(_tagManager.sceneTransition))
         {
             //scene transition stuff here
@@ -255,9 +304,65 @@ public class Gameplay : MonoBehaviour
                 return;
             }
         }
+        //else if (other.CompareTag(_tagManager.pressurePlate) && placedRock)
+        //{
+        //    placedRock = false; 
+        //}
     }
     #endregion
 
+    private void Update()
+    {
+        if (keysCollected == keysRequired)
+        {
+            doorUnlocked = true;
+        }
+        if (!paused && Input.GetKeyDown(pauseKey))
+        {
+            paused = true;
+            Time.timeScale = 0.0f;
+            //_uiController.ActivatePauseMenu();
+        }
+        else if (paused && Input.GetKeyDown(pauseKey))
+        {
+            paused = false;
+            Time.timeScale = 1.0f;
+            //_uiController.DeactivatePauseMenu();
+        }
+    }
+
+    //private void SetElementalState(string element)
+    //{
+    //    elementalState = element;
+    //    if (element == "fire")
+    //    {
+    //        earthState.SetActive(false);
+    //        airState.SetActive(false);
+    //        fireState.SetActive(true);
+    //        waterState.SetActive(false);
+    //    }
+    //    else if (element == "water")
+    //    {
+    //        earthState.SetActive(false);
+    //        airState.SetActive(false);
+    //        fireState.SetActive(false);
+    //        waterState.SetActive(true);
+    //    }
+    //    else if (element == "earth")
+    //    {
+    //        earthState.SetActive(true);
+    //        airState.SetActive(false);
+    //        fireState.SetActive(false);
+    //        waterState.SetActive(false);
+    //    }
+    //    else if (element == "air")
+    //    {
+    //        earthState.SetActive(false);
+    //        airState.SetActive(true);
+    //        fireState.SetActive(false);
+    //        waterState.SetActive(false);
+    //    }
+    //}
 
     private void SetElementalState(string element)
     {

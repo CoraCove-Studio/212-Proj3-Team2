@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PressurePlateBehavior : MonoBehaviour
 {
@@ -10,12 +11,15 @@ public class PressurePlateBehavior : MonoBehaviour
     [Header("ASSIGNED IN INSPECTOR")]
     //[SerializeField] private GameObject itemToDestroy;
     [SerializeField] private Collider dungeonShelf;
-
     [SerializeField] private Collider elementalCol;
+
+    [SerializeField] private AnimationDelgate anim;
 
     [Header("SCRIPTS - ASSIGNED IN INSPECTOR")]
     [SerializeField] private Gameplay _gamePlay;
     [SerializeField] private TagManager _tagManager;
+    [SerializeField] private AudioClip clunkSFX, fallSFX;
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
@@ -43,13 +47,21 @@ public class PressurePlateBehavior : MonoBehaviour
         this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 0.053f, this.gameObject.transform.position.z);
         depressed = true;
         //play audio click here
+        audioSource.volume = 0.5f;
+        audioSource.clip = clunkSFX;
+        audioSource.Play();
 
-        //inserted code
-        dungeonShelf.attachedRigidbody.useGravity = true;
-        dungeonShelf.attachedRigidbody.isKinematic = false;
+        ////inserted code
+        //dungeonShelf.attachedRigidbody.useGravity = true;
+        //dungeonShelf.attachedRigidbody.isKinematic = false;
 
-        //itemToDestroy.SetActive(false);
-        elementalCol.attachedRigidbody.useGravity = true;
+        //audioSource.volume = 0.5f;
+        //audioSource.clip = fallSFX;
+        //audioSource.Play();
+
+        ////itemToDestroy.SetActive(false);
+        //elementalCol.attachedRigidbody.useGravity = true;
+        //elementalCol.attachedRigidbody.isKinematic = false;
     }
     private void OnTriggerExit(Collider other)
     {

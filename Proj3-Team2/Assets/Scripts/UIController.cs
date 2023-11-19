@@ -1,31 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class UIController : MonoBehaviour
 {
+    //[Header("ASSIGNED IN INSPECTOR")]
+    //[SerializeField] private Slider size;
+    //[SerializeField] private Image sizeFill;
+    //[SerializeField] private Color fireColor;
+    //[SerializeField] private Color waterColor;
+
+    //[Header("OTHER SCRIPTS")] //assigned in inspector
+    //[SerializeField] private Gameplay _gameplay;
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    UpdateSlider(_gameplay.scaleValue, _gameplay.elementalState);
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    UpdateSlider(_gameplay.scaleValue, _gameplay.elementalState);
+    //    //print(_gameplay.elementalState);
+    //}
+
+    //void UpdateSlider(float amount, string state)
+    //{
+    //    size.value = amount;
+    //    if(state == "fire")
+    //    {
+    //        sizeFill.GetComponent<Image>().color = fireColor;
+    //    }
+    //    else if(state == "water")
+    //    {
+    //        sizeFill.GetComponent<Image>().color = waterColor;
+    //    }
+    //    else
+    //    {
+    //        return;
+    //    }
+    //}
+
     [Header("ASSIGNED IN INSPECTOR")]
     [SerializeField] private TMP_Text coinCount;
     [SerializeField] private TMP_Text keyCount;
     [SerializeField] private Image[] elementalIcons;            //0 is earth, 1 is water, 2 is fire, 3 is air
     [SerializeField] private GameObject pausePanel;
-
-
     [Header("ASSIGNED VIA GAMEPLAY")]
     [SerializeField] private Image activeIcon;
-
     [Header("OTHER SCRIPTS")]
     [SerializeField] private Gameplay _gameplay;
-
     private void Start()
     {
         elementalIcons = new Image[4];
         pausePanel.SetActive(false);
         //ChangeElementalIcon(_gameplay.elementalState);
     }
-
     public void ChangeElementalIcon(string state)
     {
         switch (state)
@@ -47,22 +80,18 @@ public class UIController : MonoBehaviour
                 break;
         }
     }
-
     public void UpdateCoinCount(int coins)
     {
         coinCount.text = "x" + coins.ToString();
     }
-
     public void UpdateKeyCount(int keys)
     {
         keyCount.text = "x" + keys.ToString();
     }
-
     public void ActivatePauseMenu()
     {
         pausePanel.SetActive(true);
     }
-
     public void DeactivatePauseMenu()
     {
         pausePanel.SetActive(false);
