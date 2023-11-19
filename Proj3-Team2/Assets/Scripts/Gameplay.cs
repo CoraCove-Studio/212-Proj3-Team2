@@ -19,10 +19,6 @@ public class Gameplay : MonoBehaviour
     [Header("ASSIGNED IN INSPECTOR")]
     [SerializeField] private GameObject player;
     [SerializeField] private Material[] elementalMaterials = new Material[4];  // earth is [0] water is [1] fire is [2] air is [3]
-    [SerializeField] private GameObject fireState;
-    [SerializeField] private GameObject waterState;
-    [SerializeField] private GameObject earthState;
-    [SerializeField] private GameObject airState;
     [SerializeField] public string elementalState;                  //public so other scripts have access
     //[SerializeField] private GameObject gameWonPanel;               //temp
     [SerializeField] private int keysRequired;
@@ -210,7 +206,7 @@ public class Gameplay : MonoBehaviour
         {
             if(elementalState == "water")
             {
-                waterState.GetComponent<BoxCollider>().enabled = false;          //if water, you can pass thru the gate
+                //waterState.GetComponent<BoxCollider>().enabled = false;          //if water, you can pass thru the gate
             }
             else
             {
@@ -257,7 +253,7 @@ public class Gameplay : MonoBehaviour
             }
         }
 
-        else if (other.CompareTag(_tagManager.key))
+        else if (other.CompareTag(_tagManager.key) && elementalState == "earth")
         {
             other.gameObject.SetActive(false);
             keysCollected++;

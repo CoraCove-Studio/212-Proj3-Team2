@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         player = GetComponent<Transform>();
 
+
+    }
+
+    private void Update()
+    {
         if (_gameplay.elementalState == "air")
         {
             canJump = true;
@@ -47,10 +52,6 @@ public class PlayerController : MonoBehaviour
         {
             canJump = false;
         }
-    }
-
-    private void Update()
-    {
         if (sceneName == levelThree)
         {
             if (isJumping && _gameplay.elementalState == "air")
