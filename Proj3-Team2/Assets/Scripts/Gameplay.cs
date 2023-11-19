@@ -238,7 +238,7 @@ public class Gameplay : MonoBehaviour
         {
             if(elementalState == "water")                       //must be water to pass thru the pipe
             {                                                   //here is likely where you'd play the pipe anim
-                this.gameObject.transform.position = other.GetComponent<PipePhaseBehavior>().pipeTravelPoint.transform.position;
+                //this.gameObject.transform.position = other.GetComponent<PipePhaseBehavior>().pipeTravelPoint.transform.position;
             }
             else                                                //if not water do nothing
             {
@@ -282,11 +282,11 @@ public class Gameplay : MonoBehaviour
             {
                 //door burning anim here, with delay
                 //currently set to mainMenu but will change to levelThree
-                StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "mainMenu"));
+                StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "levelThree"));
             }
             else if (sceneName == "levelThree" && elementalState == "air" && doorUnlocked)
             {
-                //level three to win? or four
+                StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "mainMenu"));
             }
         }
     }
