@@ -83,6 +83,8 @@ public class PlayerController : MonoBehaviour
     {
         GetPlayerInput();
         MovePlayer();
+        MoveAnimation();
+
 
         if (canJump && Input.GetKey(jump) && _gameplay.elementalState == "air")
         {
