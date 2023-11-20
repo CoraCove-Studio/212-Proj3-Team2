@@ -382,4 +382,23 @@ public class Gameplay : MonoBehaviour
         //_uiController.ChangeElementalIcon(element);
     }
 
+    public void SetMaterialToGreenInHelp()
+    {
+        player.GetComponent<Renderer>().material = elementalMaterials[0];
+    }
+
+    public void SetMaterialToBlueInHelp()
+    {
+        player.GetComponent<Renderer>().material = elementalMaterials[1];
+    }
+
+    public void SetMaterialToRedInHelp()
+    {
+        player.GetComponent<Renderer>().material = elementalMaterials[2];
+    }
+
+    public void SetMaterialToWhiteInHelp()
+    {
+        player.GetComponent<Renderer>().material = elementalMaterials[3];
+    }
 }

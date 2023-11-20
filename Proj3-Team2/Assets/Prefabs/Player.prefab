@@ -200,7 +200,7 @@ MonoBehaviour:
   elementalIcons: []
   pausePanel: {fileID: 0}
   activeIcon: {fileID: 0}
-  _gameplay: {fileID: 0}
+  _gameplay: {fileID: 2853222006429567093}
 --- !u!114 &2853222006429567093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   waterState: {fileID: 0}
   earthState: {fileID: 0}
   airState: {fileID: 0}
-  elementalState: earth
+  elementalState: fire
   keysRequired: 0
   pauseKey: 0
   _tagManager: {fileID: 7096573045453820993}
@@ -249,14 +249,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
-  jump: 0
-  jumpDuration: 0
-  jumpCoolDown: 0
+  jump: 32
+  jumpDuration: 3
+  jumpCoolDown: 1
   isJumping: 0
-  canJump: 0
+  canJump: 1
   horizontalInput: 0
-  jumpPower: 0
-  _gameplay: {fileID: 0}
+  jumpPower: 5
+  _gameplay: {fileID: 2853222006429567093}
+  _anim: {fileID: 0}
 --- !u!95 &3876605536734531525
 Animator:
   serializedVersion: 5
@@ -270,7 +271,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1eae66b6379d95540aed6382c28066e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
