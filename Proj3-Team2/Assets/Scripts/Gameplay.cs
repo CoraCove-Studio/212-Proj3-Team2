@@ -253,7 +253,7 @@ public class Gameplay : MonoBehaviour
             }
         }
 
-        else if (other.CompareTag(_tagManager.key) && elementalState == "earth")
+        else if (other.CompareTag(_tagManager.key))
         {
             other.gameObject.SetActive(false);
             keysCollected++;
