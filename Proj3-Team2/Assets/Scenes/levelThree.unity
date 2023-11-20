@@ -1379,6 +1379,11 @@ PrefabInstance:
       propertyPath: pressurePlate
       value: 
       objectReference: {fileID: 1300709769}
+    - target: {fileID: 6587611134551327202, guid: 89a32941865132c4ba1c2782790ed46b,
+        type: 3}
+      propertyPath: playerRockLocation
+      value: 
+      objectReference: {fileID: 1280391215}
     - target: {fileID: 6981021406093221523, guid: 89a32941865132c4ba1c2782790ed46b,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -1433,6 +1438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269326415265582628, guid: 89a32941865132c4ba1c2782790ed46b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7758085153458865193, guid: 89a32941865132c4ba1c2782790ed46b,
         type: 3}
@@ -8504,6 +8514,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c69c42416306be4baee3d249461f08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &635411349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3868176445852541511, guid: 4c0a5b748e4fe364080093376b966369,
+    type: 3}
+  m_PrefabInstance: {fileID: 635411346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &642438236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10766,6 +10782,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: sceneTransition
       objectReference: {fileID: 0}
+    - target: {fileID: 6727838498746804213, guid: e14a3276e418a984b87d66802fb1b23b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6727838498747300820, guid: e14a3276e418a984b87d66802fb1b23b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12226,7 +12247,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.3448647, y: 2.1738925, z: 2.8824556}
   m_Center: {x: 0.6446809, y: 1.1131961, z: 1.3273882}
@@ -12860,7 +12881,12 @@ PrefabInstance:
         type: 3}
       propertyPath: pressurePlate
       value: 
-      objectReference: {fileID: 1300709769}
+      objectReference: {fileID: 1859414353}
+    - target: {fileID: 6587611134551327202, guid: 89a32941865132c4ba1c2782790ed46b,
+        type: 3}
+      propertyPath: playerRockLocation
+      value: 
+      objectReference: {fileID: 635411349}
     - target: {fileID: 6981021406093221523, guid: 89a32941865132c4ba1c2782790ed46b,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -24294,6 +24320,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
+--- !u!1 &1859414353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578,
+    type: 3}
+  m_PrefabInstance: {fileID: 1859414352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1860019713
 PrefabInstance:
   m_ObjectHideFlags: 0
