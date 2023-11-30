@@ -96,14 +96,6 @@ public class PlayerController : MonoBehaviour
     private void GetPlayerInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        if(horizontalInput <= -1) //moving right
-        {
-            moveDirection = new Vector3(-1, 0, 0);
-        }
-        else if(horizontalInput >= 1) //moving left
-        {
-            moveDirection = new Vector3(1, 0, 0);
-        }
     }
 
     private void MovePlayer()
@@ -121,10 +113,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private void Rotate()
-    //{
-    //    this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * 0.5f);
-    //}
+    private void Rotate()
+    {
+        if (horizontalInput <= -1) //moving right
+        {
+            moveDirection = new Vector3(1, 0, 0);
+        }
+        else if (horizontalInput >= 1) //moving left
+        {
+            moveDirection = new Vector3(-1, 0, 0);
+        }
+
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * 0.5f);
+    }
     private void Jump()
     {
         isJumping = true;
