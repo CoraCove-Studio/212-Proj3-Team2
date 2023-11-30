@@ -26,11 +26,18 @@ public class PipePhaseBehavior : MonoBehaviour
         element = _gameplay.elementalState.ToString();
     }
 
-    private void OnTriggerEnter(Collider other)
+    //commented out to work with interact button
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag(_tagManager.player) && element == water)
+    //    {
+    //        player.transform.position = pipeTravelPoint[Random.Range(0, pipeTravelPoint.Count)].position;
+    //    }
+    //}
+
+    //public so interact button can call it
+    public void TravelThruPipe()
     {
-        if (other.gameObject.CompareTag(_tagManager.player) && element == water)
-        {
-            player.transform.position = pipeTravelPoint[Random.Range(0, pipeTravelPoint.Count)].position;
-        }
+        player.transform.position = pipeTravelPoint[Random.Range(0, pipeTravelPoint.Count)].position;
     }
 }
