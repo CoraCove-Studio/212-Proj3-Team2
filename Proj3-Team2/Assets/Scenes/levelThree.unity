@@ -52743,6 +52743,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_02 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7436868042603326328, guid: e37d55d9adae8724c9dcf1dff5b67578,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1158803813}
+    - target: {fileID: 7436868042603326328, guid: e37d55d9adae8724c9dcf1dff5b67578,
+        type: 3}
+      propertyPath: clunkSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: a7f5dd833acd2cd49987fc86ba711143, type: 3}
+    - target: {fileID: 7436868042603326328, guid: e37d55d9adae8724c9dcf1dff5b67578,
+        type: 3}
+      propertyPath: _gamePlay
+      value: 
+      objectReference: {fileID: 1280391218}
+    - target: {fileID: 7436868042603326328, guid: e37d55d9adae8724c9dcf1dff5b67578,
+        type: 3}
+      propertyPath: _tagManager
+      value: 
+      objectReference: {fileID: 1280391219}
+    - target: {fileID: 7436868042603326328, guid: e37d55d9adae8724c9dcf1dff5b67578,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 582217393}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -52782,6 +52807,12 @@ BoxCollider:
 --- !u!4 &1856399909 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8535109859799462792, guid: eb2ab551d3e101047af15b9c68e0bd04,
+    type: 3}
+  m_PrefabInstance: {fileID: 568262303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1856399911 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8863717992303049923, guid: eb2ab551d3e101047af15b9c68e0bd04,
     type: 3}
   m_PrefabInstance: {fileID: 568262303}
   m_PrefabAsset: {fileID: 0}
@@ -56404,7 +56435,7 @@ MonoBehaviour:
   myEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1856399904}
+      - m_Target: {fileID: 1856399911}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -56413,7 +56444,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: active
+          m_StringArgument: Active
           m_BoolArgument: 0
         m_CallState: 2
   _gamePlay: {fileID: 1280391218}
