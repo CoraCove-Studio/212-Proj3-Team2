@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Proj3-Team2/Assets/Animations/DoorL1.controller.meta
 guid: 148c6665524a7f046b63dee1a83a95a5
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
+========
+guid: f235220e5b047cd448b7321c54aa8f82
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+>>>>>>>> fcef9ba513a500f9f60925a7e5ff0f8c80abdf1a:Proj3-Team2/Assets/Animations/LevelThreeTopRight.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

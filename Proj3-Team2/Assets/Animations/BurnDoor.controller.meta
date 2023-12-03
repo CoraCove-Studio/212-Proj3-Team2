@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Proj3-Team2/Assets/Animations/BurnDoor.controller.meta
 guid: 14e9257cbe7883146a2f8c58022c97dc
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
+========
+guid: e13acd9943930c3469650308a8e2a001
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+>>>>>>>> fcef9ba513a500f9f60925a7e5ff0f8c80abdf1a:Proj3-Team2/Assets/Animations/DoorL1.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
