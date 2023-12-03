@@ -9161,7 +9161,7 @@ PrefabInstance:
     - target: {fileID: 8385242052075323531, guid: dfa07040f3b61f648bc8ad1291f6cbdb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4
+      value: -1.262
       objectReference: {fileID: 0}
     - target: {fileID: 8385242052075323531, guid: dfa07040f3b61f648bc8ad1291f6cbdb,
         type: 3}
@@ -19806,6 +19806,7 @@ GameObject:
   - component: {fileID: 1543235453}
   - component: {fileID: 1543235452}
   - component: {fileID: 1543235451}
+  - component: {fileID: 1543235456}
   m_Layer: 0
   m_Name: SceneTrigger
   m_TagString: Untagged
@@ -19841,18 +19842,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1674598798}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: NextScene
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1674598798}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -19862,8 +19851,8 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: FireActive
-          m_BoolArgument: 1
-        m_CallState: 2
+          m_BoolArgument: 0
+        m_CallState: 1
   _gamePlay: {fileID: 1674598784}
   _tagManager: {fileID: 1674598783}
 --- !u!65 &1543235452
@@ -19952,6 +19941,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1543235456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543235449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bafae809224bf647b0eb6dd3a50f999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1674598785}
+  sceneName: levelThree
 --- !u!1001 &1550141944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23711,7 +23714,7 @@ Animator:
   m_GameObject: {fileID: 1710684072}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c8c1a4c2e7173694eafb407a3dc4f921, type: 2}
+  m_Controller: {fileID: 9100000, guid: 14e9257cbe7883146a2f8c58022c97dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
