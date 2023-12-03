@@ -35,6 +35,13 @@ public class SetInteractable : MonoBehaviour
         plateInteract = "PRESS E TO PLACE THE ROCK";
         pipeInteract = "PRESS E TO TRAVEL THROUGH PIPE";
     }
+    void Update()
+    {
+        if (interactable == null)
+        {
+            HideInteractMenu();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
