@@ -134,7 +134,7 @@ private void Update()
                     hasRock = false;
                     print("placed rock");
                     interactable.GetComponent<PressurePlateBehavior>().PressurePlateTriggered();
-                }
+                    interactable.GetComponent<RockEvents>().myEvents.Invoke();                }
             }
             else                                                //no rock = you shall not pass
             {
@@ -158,7 +158,8 @@ private void Update()
                     placedRock = true;
                     hasRock = false;
                     print("placed rock");
-                    //other.GetComponent<PressurePlateBehavior>().PressurePlateTriggered();
+                    interactable.GetComponent<RockEvents>().myEvents.Invoke();
+                    interactable.GetComponent<PressurePlateBehavior>().PressurePlateTriggered();
                 }
             }
             else                                                //no rock = you shall not pass
