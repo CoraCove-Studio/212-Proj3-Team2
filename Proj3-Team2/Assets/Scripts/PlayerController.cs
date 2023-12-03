@@ -40,14 +40,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         player = GetComponent<Transform>();
 
-        if (_gameplay.elementalState == "air")
-        {
-            canJump = true;
-        }
-        else
-        {
-            canJump = false;
-        }
+        
     }
 
     private void Update()

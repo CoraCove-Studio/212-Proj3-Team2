@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachedToPlayer: 0
-  player: {fileID: 0}
-  playerXPos: 0
-  playerYPos: 0
-  playerZPos: 0
+  depositedOnPlate: 0
+  canPickUp: 0
+  playerRockLocation: {fileID: 0}
+  pressurePlate: {fileID: 0}

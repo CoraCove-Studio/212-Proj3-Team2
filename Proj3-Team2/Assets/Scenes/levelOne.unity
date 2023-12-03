@@ -6896,18 +6896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbeffdd9230aa54caf4558bf5f8b11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &750630655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750630641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3bd8abdd83ee2644a2cd016353d4d84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &753886607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 424014, guid: 471a9819acca1d34c98fd8fee901ffcf,
@@ -17431,12 +17419,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 861339618}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1740609578 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4935991497516316195, guid: eb2ab551d3e101047af15b9c68e0bd04,
-    type: 3}
-  m_PrefabInstance: {fileID: 861339618}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1747055378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21850,7 +21832,7 @@ MonoBehaviour:
   myEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1740609578}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -21982,7 +21964,7 @@ MonoBehaviour:
   myEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1740609578}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -22705,11 +22687,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2492000268138576852, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
-      propertyPath: _gameplay
-      value: 
-      objectReference: {fileID: 750630643}
-    - target: {fileID: 2492000268138576852, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
       propertyPath: interactText
       value: 
       objectReference: {fileID: 97990496}
@@ -22718,41 +22695,6 @@ PrefabInstance:
       propertyPath: interactPanel
       value: 
       objectReference: {fileID: 1995783470}
-    - target: {fileID: 2853222006429567093, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: paused
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853222006429567093, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: keysRequired
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853222006429567093, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: keysCollected
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3029857696246289908, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: _anim
-      value: 
-      objectReference: {fileID: 750630655}
-    - target: {fileID: 3029857696246289908, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: _gameplay
-      value: 
-      objectReference: {fileID: 750630643}
-    - target: {fileID: 3876605536734531525, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3876605536734531525, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5454692858009971209, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22811,11 +22753,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 494623297225604522, guid: 4c0a5b748e4fe364080093376b966369,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 750630655}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c0a5b748e4fe364080093376b966369, type: 3}
 --- !u!1001 &6287680036915158404
 PrefabInstance:

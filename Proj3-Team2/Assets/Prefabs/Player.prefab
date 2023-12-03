@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3029857696246289908}
   - component: {fileID: 3876605536734531525}
   - component: {fileID: 2492000268138576852}
+  - component: {fileID: 7473548650250295232}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -201,7 +202,7 @@ MonoBehaviour:
   elementalIcons: []
   pausePanel: {fileID: 0}
   activeIcon: {fileID: 0}
-  _gameplay: {fileID: 0}
+  _gameplay: {fileID: 2853222006429567093}
 --- !u!114 &2853222006429567093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +220,7 @@ MonoBehaviour:
   placedRock: 0
   child: {fileID: 0}
   coinsCollected: 0
-  keysCollected: 0
+  keysCollected: 2
   doorUnlocked: 0
   paused: 0
   player: {fileID: 494623297225604522}
@@ -228,7 +229,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: de0335ddaa4797648ade1e732d607824, type: 2}
   - {fileID: 2100000, guid: 7e152e37eb519a34ba86da3f0c6cfae3, type: 2}
   - {fileID: 2100000, guid: 8be3f06037224204a915401e65509f4f, type: 2}
-  elementalState: earth
+  elementalState: fire
   keysRequired: 0
   pauseKey: 27
   _tagManager: {fileID: 7096573045453820993}
@@ -247,15 +248,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
-  jump: 0
-  jumpDuration: 0
-  jumpCoolDown: 0
+  jump: 32
+  jumpDuration: 3
+  jumpCoolDown: 1
   isJumping: 0
-  canJump: 0
+  canJump: 1
+  moveDirection: {x: 0, y: 0, z: 0}
   horizontalInput: 0
-  jumpPower: 0
-  _gameplay: {fileID: 0}
-  _anim: {fileID: 0}
+  jumpPower: 5
+  _gameplay: {fileID: 2853222006429567093}
+  _anim: {fileID: 7473548650250295232}
 --- !u!95 &3876605536734531525
 Animator:
   serializedVersion: 5
@@ -269,7 +271,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1eae66b6379d95540aed6382c28066e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -294,10 +296,23 @@ MonoBehaviour:
   interactText: {fileID: 0}
   interact: 101
   _tagManager: {fileID: 7096573045453820993}
+  _gameplay: {fileID: 2853222006429567093}
   coreInteract: 
   rockInteract: 
   plateInteract: 
   pipeInteract: 
+--- !u!114 &7473548650250295232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494623297225604522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bd8abdd83ee2644a2cd016353d4d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783182845752342251
 GameObject:
   m_ObjectHideFlags: 0
