@@ -11,26 +11,24 @@ public class RockEvents : MonoBehaviour
     [Header("SCRIPTS - ASSIGNED IN INSPECTOR")]
     [SerializeField] private Gameplay _gamePlay;
     [SerializeField] private TagManager _tagManager;
-    [SerializeField] private PressurePlateBehavior _pressurePlateBehavior;
 
     //[SerializeField] private Animator objectToAnimate;
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag(_tagManager.player) && !_gamePlay.hasRock)
-    //    {
-    //        return;
-    //    }
-    //    else if (other.CompareTag(_tagManager.player) && !_gamePlay.placedRock)
-    //    {
-    //        Debug.Log("event happened");
-    //        myEvents.Invoke();
-    //    }
-    //    else if (other.CompareTag(_tagManager.player) && _gamePlay.placedRock)
-    //    {
-    //        Debug.Log("event happened");
-    //        myEvents.Invoke();
-    //        _gamePlay.placedRock = false;
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(_tagManager.player) && !_gamePlay.hasRock)
+        {
+            return;
+        }
+        else if (other.CompareTag(_tagManager.player) && !_gamePlay.placedRock)
+        {
+            Debug.Log("event happened");
+            myEvents.Invoke();
+        }
+        else if (other.CompareTag(_tagManager.player) && _gamePlay.placedRock)
+        {
+            Debug.Log("event happened");
+            myEvents.Invoke();
+        }
+    }
 }
