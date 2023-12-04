@@ -50,13 +50,13 @@ private void Update()
         {
             paused = true;
             Time.timeScale = 0.0f;
-            //_uiController.ActivatePauseMenu();
+            _uiController.ActivatePauseMenu();
         }
         else if (paused && Input.GetKeyDown(pauseKey))
         {
             paused = false;
             Time.timeScale = 1.0f;
-            //_uiController.DeactivatePauseMenu();
+            _uiController.DeactivatePauseMenu();
         }
 
         if (Input.GetKeyDown(_setInteractable.interact) && _setInteractable.interactable != null)
@@ -219,7 +219,7 @@ private void Update()
             elementalState = "earth";                           //default if something goes wrong, sets state to earth
             player.GetComponent<Renderer>().material = elementalMaterials[0];
         }
-        //_uiController.ChangeElementalIcon(elementalState);
+        _uiController.ChangeElementalIcon(elementalState);
     }
 
 
@@ -494,7 +494,7 @@ private void Update()
         {
             player.GetComponent<Renderer>().material = elementalMaterials[3];
         }
-        //_uiController.ChangeElementalIcon(element);
+        _uiController.ChangeElementalIcon(element);
     }
 
 }

@@ -13,4 +13,9 @@ public class SceneTrigger : MonoBehaviour
     {
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, sceneName));
     }
+
+    public void OnClickReset()
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

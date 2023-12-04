@@ -2138,11 +2138,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2029370116604333137, guid: 830fc46a1a3520c44b06fa752f4928a0,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4d682a788d6bd2f4e9c44f0237cc5c3a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -21898,10 +21898,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1664198793}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickReset
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900052270517474906, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188787184337989694, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8900052270517474906, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1664198793}
   m_SourcePrefab: {fileID: 100100000, guid: 5fad36f834e4ee641b0801bd0fd33d41, type: 3}
 --- !u!1 &1664198790 stripped
 GameObject:
@@ -21921,6 +21955,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1664198792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8900052270517474906, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1664198789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1664198793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664198792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bafae809224bf647b0eb6dd3a50f999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  sceneName: levelTwo
 --- !u!4 &1666907638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5675712537768515036, guid: 8cda7687928e5174ea2627e48a3c6d69,
@@ -22134,6 +22188,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6935118108462968868, guid: 4c0a5b748e4fe364080093376b966369,
+        type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 1664198792}
     - target: {fileID: 7096573045453820993, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: key

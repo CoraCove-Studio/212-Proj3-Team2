@@ -737,6 +737,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1893013253}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &92945535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8900052270517474906, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 2345887916989642470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &92945539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92945535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bafae809224bf647b0eb6dd3a50f999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  sceneName: levelOne
 --- !u!1001 &95385167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13132,7 +13152,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Activated
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   _gamePlay: {fileID: 750630643}
   _tagManager: {fileID: 750630645}
   _pressurePlateBehavior: {fileID: 0}
@@ -21458,11 +21478,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2029370116604333137, guid: 830fc46a1a3520c44b06fa752f4928a0,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b864bb8dd1e8e434e91082ed6f83820a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -22469,6 +22489,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneFader
       objectReference: {fileID: 0}
+    - target: {fileID: 4107512561165917775, guid: 549e8b8bca1b0c146a3d6690d6801370,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8761738844181567200, guid: 549e8b8bca1b0c146a3d6690d6801370,
         type: 3}
       propertyPath: m_Pivot.x
@@ -22694,10 +22719,49 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 92945539}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickReset
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105129877482935803, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308516488120736068, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.4545898
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900052270517474906, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188787184337989694, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8900052270517474906, guid: 5fad36f834e4ee641b0801bd0fd33d41,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 92945539}
   m_SourcePrefab: {fileID: 100100000, guid: 5fad36f834e4ee641b0801bd0fd33d41, type: 3}
 --- !u!1001 &3767574111844865082
 PrefabInstance:
@@ -23065,6 +23129,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6935118108462968868, guid: 4c0a5b748e4fe364080093376b966369,
+        type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 92945535}
     - target: {fileID: 7704275108659802889, guid: 4c0a5b748e4fe364080093376b966369,
         type: 3}
       propertyPath: fadeOutUIImage
