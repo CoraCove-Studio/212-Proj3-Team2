@@ -57,7 +57,44 @@ public class UIController : MonoBehaviour
     {
         elementalIcons = new Image[4];
         pausePanel.SetActive(false);
-        //ChangeElementalIcon(_gameplay.elementalState);
+        activeIcon.gameObject.SetActive(true);
+    }
+
+    private void Update()
+    {
+        ChangeElementalIcon(_gameplay.elementalState);
+
+        if (_gameplay.elementalState == "earth")
+        {
+            activeIcon = elementalIcons[0];
+            elementalIcons[1].gameObject.SetActive(false);
+            elementalIcons[2].gameObject.SetActive(false);
+            elementalIcons[3].gameObject.SetActive(false);
+        }
+
+        else if (_gameplay.elementalState == "water")
+        {
+            activeIcon = elementalIcons[1];
+            elementalIcons[0].gameObject.SetActive(false);
+            elementalIcons[2].gameObject.SetActive(false);
+            elementalIcons[3].gameObject.SetActive(false);
+        }
+
+        else if (_gameplay.elementalState == "fire")
+        {
+            activeIcon = elementalIcons[2];
+            elementalIcons[0].gameObject.SetActive(false);
+            elementalIcons[1].gameObject.SetActive(false);
+            elementalIcons[3].gameObject.SetActive(false);
+        }
+
+        else if (_gameplay.elementalState == "air")
+        {
+            activeIcon = elementalIcons[3];
+            elementalIcons[0].gameObject.SetActive(false);
+            elementalIcons[1].gameObject.SetActive(false);
+            elementalIcons[2].gameObject.SetActive(false);
+        }
     }
     public void ChangeElementalIcon(string state)
     {
